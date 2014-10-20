@@ -1,0 +1,27 @@
+<h1 class="sidebar11">Listing products</h1> 
+
+<% if !@products.blank?%>
+  <% #@products.each do |product| %>
+  <% for product in @products%>
+      <div class="product_detail1">
+      <div class="pimage">
+        <%= image_tag(product.image_url, class: 'img', :size => '160x160') %>  
+      </div>
+      <div class="pdetail1">
+        <div class="pname">
+          <%= product.name %>
+        </div>
+        <div class="pprice">
+          $<%= product.price %>
+        </div>
+        <div class="pdes">
+          <%= truncate(strip_tags(product.description), length: 50)%>
+        </div>
+        <div class="plink">
+          <%= link_to 'Show', product %>
+        </div>
+      </div>  
+    </div><!-- /product_detail -->
+   <% end %>
+
+<%end%>

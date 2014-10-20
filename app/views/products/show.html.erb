@@ -1,0 +1,19 @@
+<div class="product_detail">
+	<div class="pimage1">
+		<%= image_tag(@product.image_url, :class => 'img', :size => '300x200')%>
+	</div>
+	<div class="pdetail">
+		<div class="pname1">
+			<h4><u><%= @product.name %></u></h4>
+		</div>
+		<div class="pprice1">
+			<b>$<%= @product.price %></b>
+		</div>
+		<div class="pdes1">
+			<i><%= @product.description %></i>
+		</div>
+		<div class="plink">
+			<%= link_to 'Back product list', products_path %>
+		</div>
+	</div>
+</div>

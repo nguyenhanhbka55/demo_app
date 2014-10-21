@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	attr_accessor :password
+	#attr_accessible :password, :email
 	#validates_confirmation_password :password
 	EMAIl_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 	validates :email , format: { with: EMAIl_REGEX}, uniqueness: {case_sensitive: false}

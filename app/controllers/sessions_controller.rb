@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   
   def new
+  	#code
   end
 
   def create
@@ -15,13 +16,10 @@ class SessionsController < ApplicationController
 		end
   end
 
-    def destroy
-    	#destroy[:session]
+    def destroy    
     	#session[:user_id] = nil
     	session.clear
     	flash[:notice] = "You've been logged out successfully."
-    	redirect_to "/"
-    	
-    	#render controller: "products", :action => 'index'
+    	redirect_to "/"    	    	
     end
 end

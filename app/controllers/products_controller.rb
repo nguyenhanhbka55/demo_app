@@ -7,6 +7,9 @@ class ProductsController < ApplicationController
   def index
     #@products = Product.where('price = 0.45')
     @products = Product.find_by_sql("select * from products")       
+
+    #@products=Product.select("date(created_at) as ordered_date,sum(price) as total_price").group("date(created_at)")
+    #@products.to_sql
     #@products = Product.all   
     
     #@products = Product.where("name LIKE?",'%l%')

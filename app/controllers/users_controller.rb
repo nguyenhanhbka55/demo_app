@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
-	def index
+   def index
 		@users= User.all
-	end
+		#@users = User.order(created_at: :desc)
+		#@users = User.select(:email).distinct	
+		#@users = User.joins(:products).where("products.created_at ? ",Time.now)
+   end
+
   def new
-  	@user = User.new
+  	@user = User.new  	
   end
+
   def show
   	@user = User.find(params[:id])  
   end
@@ -12,10 +17,10 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			flash[:notice] = "Welcome to the site!"
-			redirect_to "/"
-			#render :action => 'show'
+			#redirect_to "/"
+			render :action => 'show'
 		else
-			flash[:alert] = "There was a problem creating your account. Please try again."
+			flash[:alert] = "There was a problem creating your account.Please try again."
 			redirect_to :back
 		end
 	end

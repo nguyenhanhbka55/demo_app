@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+<h1>Your Cart</h1>
+<% @cart.line_items.each do |item| %>
+	<%= item.quantity %>
+	<%= item.product.name %>	
+	<%= image_tag(item.product.image_url, :size => '100x100')%>
+<%end %>
+

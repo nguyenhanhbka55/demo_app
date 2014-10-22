@@ -18,7 +18,10 @@
           <%= truncate(strip_tags(product.description), length: 50)%>
         </div>
         <div class="plink">
-          <%= link_to 'Show', product %>
+          <%= link_to 'Show', product %>         
+        </div>
+        <div class="">      
+          <%= button_to 'Add to cart', line_items_path(product_id: product)%>
         </div>
       </div>  
     </div><!-- /product_detail -->

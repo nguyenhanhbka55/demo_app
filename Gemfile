@@ -32,6 +32,9 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+#gem paginate in rails
+#gem 'will_paginate', '~> 3.0.7'
+#gem 'kaminari'
 # Use unicorn as the app server
 # gem 'unicorn'
 
